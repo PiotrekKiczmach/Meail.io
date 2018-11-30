@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Meal.io",
+  "name": "Meal.io - yours diet reminder",
   "icons": [
     {
       "src": "favicon.ico",
