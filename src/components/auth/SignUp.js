@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signUp } from '../../store/actions/authActions';
 import 'materialize-css/dist/css/materialize.min.css';
+
 
 class SignUp extends Component {
   state = {
@@ -15,9 +19,11 @@ class SignUp extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.signUp(this.state);
   }
   render() {
+    const { auth, authError } = this.props;
+    if (auth.uid) return <Redirect to='/' />
     return (
             <div className="container center-align">
                 <form className="white" onSubmit={this.handleSubmit}>
@@ -52,10 +58,26 @@ class SignUp extends Component {
                         <i className="material-icons right">send</i>
                     </button>
                 </div>
+                <div className="center red-text">
+                { authError ? <p>{authError}</p> : null }
+                </div>
                 </form>
             </div>
     )
   }
 }
 
-export default SignUp
+const mapStateToProps = (state) => {
+    return {
+      auth: state.firebase.auth,
+      authError: state.auth.authError
+    }
+  }
+  
+  const mapDispatchToProps = (dispatch)=> {
+    return {
+      signUp: (creds) => dispatch(signUp(creds))
+    }
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
