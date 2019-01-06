@@ -10,7 +10,7 @@ class Navbar extends Component {
 
     componentDidMount() {
         const elem = document.querySelector(".sidenav");
-        const instances = M.Sidenav.init(elem, {});
+        M.Sidenav.init(elem, {});
     }
 
     render() {
@@ -23,12 +23,13 @@ class Navbar extends Component {
                             <div className="background">
                                 <img src={bg}/>
                             </div>
-                            
+
                             <span className="white-text name">John Kovalski</span>
                             <span className="white-text email">j.koval@gmail.com</span>
                         </div>
                     </li>
                     <li><NavLink to='/userSettings'><i className="material-icons">settings</i>Ustawienia</NavLink></li>
+                    <li><NavLink to='/calculate'><i className="material-icons">cal</i>Oblicz CPM</NavLink></li>
                     <li><div className="divider"></div></li>
                     <li><a onClick={this.props.signOut}><i className="material-icons">exit_to_app</i>Wyloguj</a></li>
                 </ul>

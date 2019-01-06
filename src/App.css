@@ -40,3 +40,11 @@ header, main, footer {
     padding-left: 0;
   }
 }
+
+input[type=radio]{
+  display: none;
+}
+
+* {
+  background-color: #ffb300;
+}

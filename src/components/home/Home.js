@@ -4,6 +4,7 @@ import Navbar from '../layout/Navbar';
 import { connect } from 'react-redux';
 
 
+
 class Home extends Component {
 
     render() {

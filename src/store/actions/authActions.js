@@ -30,7 +30,7 @@ export const signIn = (credentials) => {
       const firestore = getFirestore();
   
       firebase.auth().createUserWithEmailAndPassword(
-        newUser.email, 
+        newUser.email,
         newUser.password
       ).then(resp => {
         return firestore.collection('users').doc(resp.user.uid).set({
