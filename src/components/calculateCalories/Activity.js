@@ -11,7 +11,7 @@ import 'materialize-css/dist/css/materialize.min.css';
             <div className="col m6 l3">
                 <label>
                     <div>
-                        <h4 className="center-align">Brak aktywności, praca siedząca</h4>
+                        <h4 className="center-align purple-text">Brak aktywności, praca siedząca</h4>
                         <input type="radio" name="activity" value="1.2" checked={this.props.activity === '1.2'} onChange={this.props.handleChange}/>
                     </div>
                 </label>
@@ -19,7 +19,7 @@ import 'materialize-css/dist/css/materialize.min.css';
             <div className="col m6 l3">
                 <label >
                     <div>
-                        <h4 className="center-align">Niska ktywność, praca siedząca i treningi 1-2 w tygodniu</h4>
+                        <h4 className="center-align purple-text">Niska ktywność, praca siedząca i treningi 1-2 w tygodniu</h4>
                         <input type="radio" name="activity" value="1.35" checked={this.props.activity === '1.35'} onChange={this.props.handleChange}/>
                     </div>
                 </label>
@@ -27,7 +27,7 @@ import 'materialize-css/dist/css/materialize.min.css';
             <div className="col m6 l3">
                 <label>
                     <div>
-                        <h4 className="center-align">Średnia aktywność, praca siedząca i treningi 3-4 razy w tygodniu</h4>
+                        <h4 className="center-align purple-text">Średnia aktywność, praca siedząca i treningi 3-4 razy w tygodniu</h4>
                         <input type="radio" name="activity" value="1.55" checked={this.props.activity === '1.55'} onChange={this.props.handleChange}/>
                     </div>
                 </label>
@@ -35,7 +35,7 @@ import 'materialize-css/dist/css/materialize.min.css';
             <div className="col m6 l3">
                 <label>
                     <div>
-                        <h4 className="center-align">Wysoka aktywność, praca fizycna i treningi 3-4 razy w tygodniu</h4>
+                        <h4 className="center-align purple-text">Wysoka aktywność, praca fizycna i treningi 3-4 razy w tygodniu</h4>
                         <input type="radio" name="activity" value="1.75" checked={this.props.activity === '1.75'} onChange={this.props.handleChange}/>
                     </div>
                 </label>
@@ -43,7 +43,7 @@ import 'materialize-css/dist/css/materialize.min.css';
             <div className="col m6 l3">
                 <label>
                     <div>
-                        <h4 className="center-align">Bardzo wysoka aktywność, codzienne treningi</h4>
+                        <h4 className="center-align purple-text">Bardzo wysoka aktywność, codzienne treningi</h4>
                         <input type="radio" name="activity" value="2.05" checked={this.props.activity === '2.05'} onChange={this.props.handleChange}/>
                     </div>
                 </label>

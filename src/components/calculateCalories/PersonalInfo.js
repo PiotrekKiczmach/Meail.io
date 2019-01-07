@@ -11,19 +11,19 @@ class PersonalInfo extends Component {
                 <div className="row">
                     <div className="input-field col s12 l6 offset-l3">
                         <label htmlFor="age">Wiek (lata)</label>
-                            <input name="age" type="text" id='age' onChange={this.props.handleChange} />
+                            <input className="purple-text" name="age" type="text" id='age' onChange={this.props.handleChange} />
                             <div className="invalid-feedback">{this.props.errorAge}</div>
                     </div>
 
                     <div className="input-field col s12 l6 offset-l3">
                         <label htmlFor="height">Wzrost (cm)</label>
-                            <input name="height" type="text" id='height' onChange={this.props.handleChange} />
+                            <input className="purple-text" name="height" type="text" id='height' onChange={this.props.handleChange} />
                             <div className="invalid-feedback">{this.props.errorHeight}</div>
                     </div>
                     <div className="input-field col s12 l6 offset-l3">
                         <label htmlFor="weight">Waga (kg)</label>
-                            <input name="weight" type="text" id='weight' onChange={this.props.handleChange} />
-                            <div className="invalid-feedback">{this.props.erroWeight}</div>
+                            <input className="purple-text" name="weight" type="text" id='weight' onChange={this.props.handleChange} />
+                            <div className="invalid-feedback">{this.props.errorWeight}</div>
                     </div>
                 </div>
             </Fragment>

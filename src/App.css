@@ -45,6 +45,10 @@ input[type=radio]{
   display: none;
 }
 
-* {
-  background-color: #ffb300;
+
+
+.full-width {
+  height: 100%;
+  min-height: 100vh !important;
+  margin: 0;
 }

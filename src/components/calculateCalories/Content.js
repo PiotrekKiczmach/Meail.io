@@ -8,6 +8,7 @@ import Activity from './Activity';
 import Summary from './Summary';
 import TargetToAchieve from './TagetToAchieve';
 import { connect } from 'react-redux';
+import { saveCalories } from '../../store/actions/caloriesActions';
 
 
 
@@ -140,70 +141,80 @@ class CaloriesWizard extends Component {
         });
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault()
-        let {gender, age, height, weight, activity, summary, targetToAchieve} = this.state;
-        alert(`Your registration detail: \n 
-        Wiek: ${age} \n
-        Wzrost: ${height} \n
-        Gender: ${gender} \n
-        Aktywność: ${activity} \n
-        Posumowanie: ${summary} \n
-        Cel: ${targetToAchieve} \n
-        Waga: ${weight}`
-        );
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.props.saveCalories(this.state.summary);
+        // this.props.history.push('/');
+        // let {gender, age, height, weight, activity, summary, targetToAchieve} = this.state;
+        // alert(`Your registration detail: \n
+        // Wiek: ${age} \n
+        // Wzrost: ${height} \n
+        // Gender: ${gender} \n
+        // Aktywność: ${activity} \n
+        // Posumowanie: ${summary} \n
+        // Cel: ${targetToAchieve} \n
+        // Waga: ${weight}`
+        // );
     }
 
     render() {
         const { auth } = this.props;
         if (!auth.uid) return <Redirect to='/signin' />
         return (
-          <Fragment>
-          <div className=" amber darken-1">
-          <Navbar />
-          <div className="container center-align">
-            <h1>Oblicz zapotrzebowanie na kalorie</h1>
-            <form onSubmit={this.handleSubmit}>
-                <Gender
-                currentStep={this.state.currentStep}
-                handleChange={this.handleChange}
-                gender={this.state.gender}
-                />
-                <PersonalInfo
-                currentStep={this.state.currentStep}
-                handleChange={this.handleChange}
-                errorAgeClass={this.errorClass(this.state.formErrors.age)}
-                age={this.state.age}
-                errorAge={this.state.formErrors.age}
-                errorHeightClass={this.errorClass(this.state.formErrors.height)}
-                height={this.state.height}
-                errorHeight={this.state.formErrors.height}
-                errorWeightClass={this.errorClass(this.state.formErrors.weight)}
-                weight={this.state.weight}
-                errorWeight={this.state.formErrors.weight}
-                />
-                <Activity
-                currentStep={this.state.currentStep}
-                handleChange={this.handleChange}
-                activity={this.state.activity}
-                />
-                <TargetToAchieve
-                currentStep={this.state.currentStep}
-                handleChange={this.handleChange}
-                calculateCPM={this.calculateCPM}
-                activity={this.state.activity}
-                />
-                <Summary
-                currentStep={this.state.currentStep}
-                summary={this.state.summary}
-                canSubmit={this.state.canSubmit}
-                />
-                {this.previousButton}
-                {this.nextButton}
-            </form>
-            </div>
-            </div>
-          </Fragment>
+            <div className=" amber darken-3 full-widht">
+            <Fragment>
+
+                    <Navbar />
+                    <div className="container center-align">
+                        <h2>Oblicz dzienną ilość kalorii</h2>
+                        <form onSubmit={this.handleSubmit}>
+                            <Gender
+                            currentStep={this.state.currentStep}
+                            handleChange={this.handleChange}
+                            gender={this.state.gender}
+                            />
+                            <PersonalInfo
+                            currentStep={this.state.currentStep}
+                            handleChange={this.handleChange}
+                            errorAgeClass={this.errorClass(this.state.formErrors.age)}
+                            age={this.state.age}
+                            errorAge={this.state.formErrors.age}
+                            errorHeightClass={this.errorClass(this.state.formErrors.height)}
+                            height={this.state.height}
+                            errorHeight={this.state.formErrors.height}
+                            errorWeightClass={this.errorClass(this.state.formErrors.weight)}
+                            weight={this.state.weight}
+                            errorWeight={this.state.formErrors.weight}
+                            />
+                            <Activity
+                            currentStep={this.state.currentStep}
+                            handleChange={this.handleChange}
+                            activity={this.state.activity}
+                            />
+                            <TargetToAchieve
+                            currentStep={this.state.currentStep}
+                            handleChange={this.handleChange}
+                            calculateCPM={this.calculateCPM}
+                            activity={this.state.activity}
+                            />
+                            <Summary
+                            currentStep={this.state.currentStep}
+                            summary={this.state.summary}
+                            canSubmit={this.state.canSubmit}
+                            />
+                            <div className="row">
+                                <div className="input-field col m6 l6 s6">
+                                    {this.previousButton}
+                                </div>
+                                <div className="input-field col m6 l6 s6">
+                                    {this.nextButton}
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+        </Fragment>
+        </div>
         )
       }
 }
@@ -211,8 +222,14 @@ class CaloriesWizard extends Component {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
-      auth: state.firebase.auth
+        auth: state.firebase.auth
     }
-  }
+}
 
-export default connect(mapStateToProps)(CaloriesWizard)
+const mapDispatchToProps = dispatch => {
+    return {
+        saveCalories: (calories) => dispatch(saveCalories(calories))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CaloriesWizard)

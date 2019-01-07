@@ -9,7 +9,6 @@ class App extends Component {
 
   render() {
     return (
-      <div className="amber darken-1">
         <BrowserRouter>
           <div className = "App">
             <Switch>
@@ -21,7 +20,6 @@ class App extends Component {
             </Switch>
           </div>
         </BrowserRouter>
-      </div>
     );
   }
 }

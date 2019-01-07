@@ -11,7 +11,7 @@ class TargetToAchieve extends Component {
             <div className="col m6 l3">
                 <label>
                     <div>
-                        <h4 className="center-align" onClick={this.props.calculateCPM}>Utrata wagi</h4>
+                        <h4 className="center-align purple-text" onClick={this.props.calculateCPM}>Utrata wagi</h4>
                         <input type="radio" name="targetToAchieve" value="-250" checked={this.props.targetToAchieve === '-250'} onChange={this.props.handleChange}/>
                     </div>
                 </label>
@@ -19,7 +19,7 @@ class TargetToAchieve extends Component {
             <div className="col m6 l3">
                 <label>
                     <div>
-                        <h4 className="center-align" onClick={this.props.calculateCPM}>Utrzymanie wagi</h4>
+                        <h4 className="center-align purple-text" onClick={this.props.calculateCPM}>Utrzymanie wagi</h4>
                         <input type="radio" name="targetToAchieve" value="0" checked={this.props.targetToAchieve === '0'} onChange={this.props.handleChange}/>
                     </div>
                 </label>
@@ -27,7 +27,7 @@ class TargetToAchieve extends Component {
             <div className="col m6 l3">
                 <label>
                     <div>
-                        <h4 className="center-align" onClick={this.props.calculateCPM}>Wzrost wagi</h4>
+                        <h4 className="center-align purple-text" onClick={this.props.calculateCPM}>Wzrost wagi</h4>
                         <input type="radio" name="targetToAchieve" value="250" checked={this.props.targetToAchieve === '250'} onChange={this.props.handleChange}/>
                     </div>
                 </label>
