@@ -44,11 +44,3 @@ header, main, footer {
 input[type=radio]{
   display: none;
 }
-
-
-
-.full-width {
-  height: 100%;
-  min-height: 100vh !important;
-  margin: 0;
-}

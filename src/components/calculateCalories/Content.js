@@ -161,7 +161,7 @@ class CaloriesWizard extends Component {
         const { auth } = this.props;
         if (!auth.uid) return <Redirect to='/signin' />
         return (
-            <div className=" amber darken-3 full-widht">
+            <div className=" amber darken-3 full-width">
             <Fragment>
 
                     <Navbar />

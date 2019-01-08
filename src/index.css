@@ -30,3 +30,9 @@ code {
 .input-field input[type=text] {
   border-bottom: 1px solid #4a148c !important;
 }
+
+.full-width {
+  height: 100%;
+  min-height: 100vh !important;
+  margin: 0;
+}

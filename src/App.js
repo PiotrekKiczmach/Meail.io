@@ -4,6 +4,7 @@ import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
 import CaloriesWizard  from './components/calculateCalories/Content';
+import CreateMeal from './components/meal/AddMeal';
 
 class App extends Component {
 
@@ -17,6 +18,7 @@ class App extends Component {
               <Route path='/signup' component = { SignUp } />
               <Route path='/calculate' component = { CaloriesWizard } />
               <Route path='/history' component = { History } />
+              <Route path='/addMeal' component = { CreateMeal } />
             </Switch>
           </div>
         </BrowserRouter>

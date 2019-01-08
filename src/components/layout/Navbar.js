@@ -28,10 +28,10 @@ class Navbar extends Component {
                             <span className="white-text email">j.koval@gmail.com</span>
                         </div>
                     </li>
-                    <li><NavLink to='/userSettings'><i className="material-icons">settings</i>Ustawienia</NavLink></li>
-                    <li><NavLink to='/calculate'><i className="material-icons">cal</i>Oblicz CPM</NavLink></li>
+                    <li className="sidenav-close"><NavLink to='/addMeal'><i className="material-icons">add_circle</i>Dodaj posiłek</NavLink></li>
+                    <li className="sidenav-close"><NavLink to='/calculate'><i className="material-icons">cal</i>Oblicz CPM</NavLink></li>
                     <li><div className="divider"></div></li>
-                    <li><a onClick={this.props.signOut}><i className="material-icons">exit_to_app</i>Wyloguj</a></li>
+                    <li className="sidenav-close"><a onClick={this.props.signOut}><i className="material-icons">exit_to_app</i>Wyloguj</a></li>
                 </ul>
                 <a data-target="slide-out" className="sidenav-trigger"><i className="material-icons small">menu</i></a>
             </span>
