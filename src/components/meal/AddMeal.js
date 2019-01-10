@@ -45,10 +45,11 @@ class CreateMeal extends Component {
         const { auth } = this.props;
         if (!auth.uid) return <Redirect to='/signin' />
         return (
+            <div className="red lighten-1">
             <Fragment>
                 <Navbar />
                 <div className="container">
-                    <form className="green darken-1" onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit}>
                     <h2 className="center-align">Podaj dane posiłku</h2>
                     <div className="input-field">
                         <label htmlFor="title">Posiłek</label>
@@ -67,12 +68,13 @@ class CreateMeal extends Component {
                         </select>
                         <label>Rodzaj posiłku</label>
                     </div>
-                    <div className="input-field">
-                        <button className="btn pink lighten-1"  >Zapisz</button>
+                    <div className="row input-field center-align">
+                        <button className="btn yellow darken-1"  >Zapisz</button>
                     </div>
                     </form>
                 </div>
             </Fragment>
+            </div>
         )
     }
 }

@@ -11,7 +11,7 @@ class Gender extends Component {
             <Fragment>
                 <h3 className="center-align">Wybierz swoją płeć</h3>
                 <div className="row">
-                    <div className="col m6 l6 s6">
+                    <div className="col m6 l6 s6 xl">
                         <label>
                             <div>
                                 <h4 className="center-align purple-text">Mężczyzna</h4>
@@ -20,7 +20,7 @@ class Gender extends Component {
                             </div>
                         </label>
                     </div>
-                    <div className="col m6 l6 s6">
+                    <div className="col m6 l6 s6 xl">
                         <label>
                             <div>
                                 <h4 className="center-align purple-text">Kobieta</h4>

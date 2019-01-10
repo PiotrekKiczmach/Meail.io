@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/authActions';
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink} from 'react-router-dom';
 import 'materialize-css/dist/css/materialize.min.css';
 
 class SignIn extends Component {
@@ -22,7 +22,7 @@ class SignIn extends Component {
     const { authError, auth } = this.props;
     if (auth.uid) return <Redirect to='/' />
     return (
-            <div className="container center-align">
+            <div className="container center-align teal darken-1">
                 <form className="white" onSubmit={this.handleSubmit}>
                     <div className= "row">
                         <h5 className="grey-text text-darken-3">Zaloguj się</h5>
@@ -39,6 +39,12 @@ class SignIn extends Component {
                     </div>
                     <div className="input-field">
                         <button className="waves-effect waves-light btn orange lighten-1 z-depth-0">Login</button>
+                    </div>
+                    <div className="centered">
+                      <p>Nie masz konta? Stwórz je teraz!</p>
+                      <NavLink to='/signup'>
+                        <button className="waves-effect waves-light btn orange lighten-1 z-depth-0">Zarejestruj się</button>
+                      </NavLink>
                     </div>
                     <div className="center red-text">
                         { authError ? <p>{authError}</p> : null }

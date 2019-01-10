@@ -14,4 +14,11 @@ var config = {
 firebase.initializeApp(config);
 firebase.firestore().settings({ timestampsInSnapshots: true });
 
+firebase.firestore()
+  .enablePersistence()
+  .then(() => {
+    firebase.firestore();
+  })
+  .catch(err => console.log(err));
+
 export default firebase

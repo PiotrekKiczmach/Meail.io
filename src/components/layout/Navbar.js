@@ -23,13 +23,13 @@ class Navbar extends Component {
                             <div className="background">
                                 <img src={bg}/>
                             </div>
-
-                            <span className="white-text name">John Kovalski</span>
-                            <span className="white-text email">j.koval@gmail.com</span>
+                            <span className="btn btn-floating cyan darken-3">{this.props.profile.initials}</span>
+                            <span className="white-text name">{this.props.profile.firstName} {this.props.profile.lastName}</span>
+                            <span className="white-text email">{this.props.auth.email}</span>
                         </div>
                     </li>
                     <li className="sidenav-close"><NavLink to='/addMeal'><i className="material-icons">add_circle</i>Dodaj posiłek</NavLink></li>
-                    <li className="sidenav-close"><NavLink to='/calculate'><i className="material-icons">cal</i>Oblicz CPM</NavLink></li>
+                    <li className="sidenav-close"><NavLink to='/calculate'><i className="material-icons">fitness_center</i>Oblicz CPM</NavLink></li>
                     <li><div className="divider"></div></li>
                     <li className="sidenav-close"><a onClick={this.props.signOut}><i className="material-icons">exit_to_app</i>Wyloguj</a></li>
                 </ul>
@@ -41,10 +41,18 @@ class Navbar extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    // console.log(state);
+    return{
+      auth: state.firebase.auth,
+      profile: state.firebase.profile
+    }
+  }
+
 const mapDispatchToProps = (dispatch) => {
     return {
       signOut: () => dispatch(signOut())
     }
   }
 
-export default connect(null, mapDispatchToProps)(Navbar)
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)

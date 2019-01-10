@@ -8,7 +8,7 @@ class Summary extends Component {
         return (
             <Fragment>
             <h3 className="center-align">Twoje dzienne zapotrzebowanie na kalorie</h3>
-            <h2 className="center-align">{this.props.summary}</h2>
+            <h2 className="center-align">{this.props.summary} kcal</h2>
             <div className="input-field">
                 <button className="waves-effect waves-light btn">
                         Zapisz

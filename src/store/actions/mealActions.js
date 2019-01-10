@@ -15,7 +15,7 @@ export const createMeal = (meal) => {
         });
     }
 }
-const getToday = () => {
+export const getToday = () => {
     let today = new Date();
     let dd = today.getDate();
     let mm = today.getMonth() + 1;
@@ -34,7 +34,7 @@ const getToday = () => {
     return today;
 }
 
-const getCurrentTime = () => {
+export const getCurrentTime = () => {
     let now = new Date().toLocaleString('pl-pl', {hour: "numeric", minute: "numeric"});
     
     return now;
